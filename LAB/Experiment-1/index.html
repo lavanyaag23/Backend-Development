@@ -3,76 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experiment 1 - HTML5 Elements</title>
-    <link rel="stylesheet" href="style.css">
+    <title>My First HTML5 Page</title>
 </head>
 <body>
+    <header>
+        <h1>Welcome to Backend Development</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-    <h1>Backend Development Lab</h1>
-    <p>Experiment 1: HTML5 Elements</p>
-</header>
+    <main>
+        <section id="home">
+            <h2>Introduction</h2>
+            <p>This page demonstrates HTML5 elements for backend development.</p>
+        </section>
 
-<nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-</nav>
+        <section id="about">
+            <h2>About Backend Development</h2>
+            <p>Backend development involves server-side programming, database management, and API creation.</p>
+        </section>
+    </main>
 
-<main>
+    <footer>
+        <p>&copy; 2026 Backend Development Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>
 
-<section>
-    <h2>About HTML5</h2>
-    <p>HTML5 is the latest version of HTML used to create modern web pages.</p>
+<section id="about">
+    <h2>About Backend Development</h2>
+    <p>Backend development involves server-side programming, database management, and API creation.</p>
+    
+    <h3>Key Concepts</h3>
+    <p><strong>Server-Side Programming:</strong> Writing code that runs on the server.</p>
+    <p><em>Database Management:</em> Storing and retrieving data efficiently.</p>
+    <p><mark>API Development:</mark> Creating interfaces for frontend-backend communication.</p>
+    <p><del>Traditional approaches</del> have been replaced by <ins>modern frameworks</ins>.</p>
+    <p>Example: <code>const result = await fetch('/api/data');</code></p>
+    <p>Shortcut: <kbd>Ctrl + Shift + I</kbd> opens developer tools.</p>
 </section>
 
-<section>
-    <h2>My Skills</h2>
+<section id="courses">
+    <h2>Backend Technologies</h2>
     <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Java</li>
+        <li>Programming Languages
+            <ul>
+                <li>Python</li>
+                <li>JavaScript (Node.js)</li>
+                <li>Java</li>
+                <li>Ruby</li>
+            </ul>
+        </li>
+        <li>Frameworks
+            <ul>
+                <li>Django</li>
+                <li>Flask</li>
+                <li>Express.js</li>
+                <li>Spring Boot</li>
+            </ul>
+        </li>
+        <li>Databases
+            <ul>
+                <li>MySQL</li>
+                <li>PostgreSQL</li>
+                <li>MongoDB</li>
+                <li>Redis</li>
+            </ul>
+        </li>
     </ul>
+
+    <h3>Learning Path</h3>
+    <ol>
+        <li>Learn HTML5 and CSS3</li>
+        <li>Understand JavaScript</li>
+        <li>Choose a backend language</li>
+        <li>Learn a framework</li>
+        <li>Study database design</li>
+        <li>Build RESTful APIs</li>
+        <li>Deploy to cloud</li>
+    </ol>
+
+    <h3>Technologies and Their Uses</h3>
+    <dl>
+        <dt>Django</dt>
+        <dd>High-level Python web framework promoting rapid development</dd>
+        <dt>Express.js</dt>
+        <dd>Minimalist web framework for Node.js applications</dd>
+        <dt>MongoDB</dt>
+        <dd>NoSQL document database for modern applications</dd>
+    </dl>
 </section>
 
-<section>
-    <h2>Student Details</h2>
-
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Course</th>
-        </tr>
-
-        <tr>
-            <td>Lavanya Agrawal</td>
-            <td>B.Tech CSE</td>
-        </tr>
+<section id="comparison">
+    <h2>Backend Technology Comparison</h2>
+    <table border="1" cellpadding="10" cellspacing="0">
+        <caption>Comparison of Popular Backend Technologies</caption>
+        <thead>
+            <tr>
+                <th>Technology</th>
+                <th>Type</th>
+                <th>Learning Curve</th>
+                <th>Use Case</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Node.js + Express</td>
+                <td>JavaScript Runtime + Framework</td>
+                <td>Moderate</td>
+                <td>Real-time apps, REST APIs</td>
+            </tr>
+            <tr>
+                <td>Python + Django</td>
+                <td>Language + Full-Stack Framework</td>
+                <td>Moderate</td>
+                <td>Content-heavy sites, admin panels</td>
+            </tr>
+            <tr>
+                <td>Python + Flask</td>
+                <td>Language + Micro-framework</td>
+                <td>Easy</td>
+                <td>Microservices, REST APIs</td>
+            </tr>
+            <tr>
+                <td>Java + Spring Boot</td>
+                <td>Language + Enterprise Framework</td>
+                <td>Steep</td>
+                <td>Enterprise applications, microservices</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">Table 1: Backend Technology Comparison</td>
+            </tr>
+        </tfoot>
     </table>
 </section>
 
-<section>
-    <h2>Registration Form</h2>
+<section id="contact">
+    <h2>Contact Us</h2>
+    <form action="/submit" method="POST" id="contactForm">
+        <fieldset>
+            <legend>Personal Information</legend>
+            
+            <div>
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+            </div>
+            
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+            
+            <div>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91-XXXXXXXXXX" pattern="[+]{0,1}[0-9\- ]+">
+            </div>
+            
+            <div>
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="18" max="100">
+            </div>
+            
+            <div>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob">
+            </div>
+        </fieldset>
 
-    <form>
-        <label for="name">Name:</label><br>
-        <input id="name" name="name" type="text" placeholder="Enter your name" title="Enter your name"><br><br>
+        <fieldset>
+            <legend>Course Interest</legend>
+            
+            <div>
+                <label for="course">Select Course:</label>
+                <select id="course" name="course">
+                    <optgroup label="Backend Courses">
+                        <option value="node">Node.js Development</option>
+                        <option value="python">Python Backend</option>
+                        <option value="django">Django Framework</option>
+                    </optgroup>
+                    <optgroup label="Frontend Courses">
+                        <option value="react">React.js</option>
+                        <option value="angular">Angular</option>
+                    </optgroup>
+                </select>
+            </div>
+            
+            <div>
+                <label>Experience Level:</label>
+                <div>
+                    <input type="radio" id="beginner" name="level" value="beginner">
+                    <label for="beginner">Beginner</label>
+                </div>
+                <div>
+                    <input type="radio" id="intermediate" name="level" value="intermediate">
+                    <label for="intermediate">Intermediate</label>
+                </div>
+                <div>
+                    <input type="radio" id="advanced" name="level" value="advanced">
+                    <label for="advanced">Advanced</label>
+                </div>
+            </div>
+            
+            <div>
+                <label>Topics of Interest:</label>
+                <div>
+                    <input type="checkbox" id="api" name="topics" value="api">
+                    <label for="api">API Development</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="db" name="topics" value="database">
+                    <label for="db">Database Design</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="security" name="topics" value="security">
+                    <label for="security">Security & Authentication</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="devops" name="topics" value="devops">
+                    <label for="devops">DevOps & Deployment</label>
+                </div>
+            </div>
+            
+            <div>
+                <label for="experience">Experience (years):</label>
+                <input type="range" id="experience" name="experience" min="0" max="10" value="1">
+                <output id="experienceOutput">1</output>
+            </div>
+        </fieldset>
 
-        <label for="email">Email:</label><br>
-        <input id="email" name="email" type="email" placeholder="Enter your email" title="Enter your email"><br><br>
+        <fieldset>
+            <legend>Additional Information</legend>
+            
+            <div>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" cols="30" placeholder="Tell us about your learning goals..."></textarea>
+            </div>
+            
+            <div>
+                <label for="color">Favorite Color:</label>
+                <input type="color" id="color" name="color" value="#4CAF50">
+            </div>
+            
+            <div>
+                <label for="file">Upload Resume:</label>
+                <input type="file" id="file" name="file" accept=".pdf,.doc,.docx">
+            </div>
+            
+            <div>
+                <label for="url">Portfolio URL:</label>
+                <input type="url" id="url" name="url" placeholder="https://yourportfolio.com">
+            </div>
+        </fieldset>
 
-        <label for="dob">Date of Birth:</label><br>
-        <input id="dob" name="dob" type="date" placeholder="Select your birth date" title="Select your birth date"><br><br>
-
-        <input type="submit" value="Submit" title="Submit registration">
+        <div>
+            <button type="submit">Submit Application</button>
+            <button type="reset">Clear Form</button>
+        </div>
     </form>
 </section>
-
-</main>
-
-<footer>
-    <p>&copy; 2026 Backend Development Lab</p>
-</footer>
-
-</body>
-</html>

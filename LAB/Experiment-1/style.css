@@ -1,58 +1,25 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    margin: 20px;
-}
-
-header, footer {
-    background: #0077b6;
-    color: white;
-    text-align: center;
-    padding: 15px;
-}
-
-nav {
-    text-align: center;
-    margin: 15px 0;
-}
-
-nav a {
-    margin: 10px;
-    text-decoration: none;
-    color: #0077b6;
-    font-weight: bold;
-}
-
-section {
-    background: white;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-}
-
 table {
-    width: 100%;
     border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
 }
-
-table, th, td {
-    border: 1px solid gray;
-}
-
 th, td {
-    padding: 10px;
-    text-align: center;
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
 }
-
-input {
-    width: 250px;
-    padding: 8px;
-}
-
-input[type="submit"] {
-    width: 120px;
-    background: #0077b6;
+th {
+    background-color: #4CAF50;
     color: white;
-    border: none;
-    cursor: pointer;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: #ddd;
+}
+caption {
+    caption-side: bottom;
+    margin-top: 10px;
+    font-style: italic;
 }

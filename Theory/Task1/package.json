@@ -1,0 +1,23 @@
+{
+  "name": "task1",
+  "version": "1.0.0",
+  "description": "testing nodejs for webdev",
+  "keywords": [
+    "backend"
+  ],
+  "homepage": "https://github.com/lavanyaag23/Backend-Development#readme",
+  "bugs": {
+    "url": "https://github.com/lavanyaag23/Backend-Development/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lavanyaag23/Backend-Development.git"
+  },
+  "license": "ISC",
+  "author": "lavanya agrawal",
+  "type": "commonjs",
+  "main": "Node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

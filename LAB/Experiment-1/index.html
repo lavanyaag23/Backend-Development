@@ -269,3 +269,116 @@
         </div>
     </form>
 </section>
+
+<section id="multimedia">
+    <h2>Multimedia Content</h2>
+    
+    <article>
+        <h3>Images</h3>
+        <!-- Using picture element for responsive images -->
+        <picture>
+            <source media="(min-width: 800px)" srcset="https://via.placeholder.com/800x400/4CAF50/white?text=Backend+Development">
+            <source media="(min-width: 400px)" srcset="https://via.placeholder.com/400x200/4CAF50/white?text=Backend">
+            <img src="https://via.placeholder.com/200x100/4CAF50/white?text=Backend" alt="Backend Development Illustration">
+        </picture>
+        
+        <figure>
+            <img src="https://via.placeholder.com/300x200/2196F3/white?text=API" alt="API Illustration">
+            <figcaption>Figure 1: RESTful API Concept</figcaption>
+        </figure>
+    </article>
+
+    <article>
+        <h3>Audio</h3>
+        <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            <source src="https://www.soundhelix.com/examples/ogg/SoundHelix-Song-1.ogg" type="audio/ogg">
+            Your browser does not support the audio element.
+        </audio>
+    </article>
+
+    <article>
+        <h3>Video</h3>
+        <video controls width="560" height="315">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+            Your browser does not support the video tag.
+        </video>
+        <track kind="subtitles" src="subtitles.vtt" srclang="en" label="English">
+    </article>
+
+    <article>
+        <h3>Progress Indicators</h3>
+        <p>Course Progress: 
+            <progress value="45" max="100">45%</progress>
+        </p>
+        <p>Storage Used: 
+            <meter value="6" min="0" max="10">60%</meter>
+        </p>
+    </article>
+</section>
+
+<section id="interactive">
+    <h2>Interactive Elements</h2>
+
+    <details>
+        <summary>View Course Prerequisites</summary>
+        <ul>
+            <li>Basic understanding of programming concepts</li>
+            <li>Familiarity with HTML, CSS (from Frontend Development course)</li>
+            <li>Knowledge of basic data structures</li>
+        </ul>
+    </details>
+
+    <details>
+        <summary>View Course Outcomes</summary>
+        <ol>
+            <li>Understand Back End Development Fundamentals</li>
+            <li>Create and build web pages and applications</li>
+            <li>Utilize frameworks and APIs</li>
+            <li>Apply security best practices and conduct testing</li>
+            <li>Demonstrate effective team collaboration skills</li>
+        </ol>
+    </details>
+
+    <div>
+        <h3>Search with Autocomplete</h3>
+        <form>
+            <label for="techSearch">Search Backend Technologies:</label>
+            <input list="technologies" id="techSearch" name="techSearch" placeholder="Type to search...">
+            <datalist id="technologies">
+                <option value="Node.js">
+                <option value="Express.js">
+                <option value="Django">
+                <option value="Flask">
+                <option value="Spring Boot">
+                <option value="Ruby on Rails">
+                <option value="MongoDB">
+                <option value="MySQL">
+                <option value="PostgreSQL">
+                <option value="Redis">
+                <option value="Docker">
+                <option value="Kubernetes">
+            </datalist>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <dialog id="myDialog">
+        <p>This is a dialog box example.</p>
+        <button id="closeDialog">Close</button>
+    </dialog>
+    <button id="openDialog">Open Dialog</button>
+</section>
+
+<script>
+    // Dialog handling
+    const dialog = document.getElementById('myDialog');
+    document.getElementById('openDialog').addEventListener('click', () => {
+        dialog.showModal();
+    });
+    document.getElementById('closeDialog').addEventListener('click', () => {
+        dialog.close();
+    });
+</script>
+

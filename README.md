@@ -6,7 +6,7 @@
 
 ## Theory
 
-- [Task 1 - Node.js](./Theory/Task%201/Node.js) , Brief Intro to Templating with EJS](./Theory/Task%205)
+- [Task 1 - Node.js, Brief Intro to Templating with EJS](./Theory/Task%201/Node.js)
 - [Task 2 - Building a Flask Server](./Theory/Task%202)
 
 ---

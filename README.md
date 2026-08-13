@@ -1,16 +1,54 @@
-# Backend-Development
+# Backend Development
 
-**Lavanya Agrawal - 590014327**
-
----
-
-## Theory
-
-- [Task 1 - Node.js,Server.js, Brief Intro to Templating with EJS](./Theory/Task%201/Node.js)
-- [Task 2 - Building a Flask Server](./Theory/Task%202)
+**Student:** Lavanya Agrawal  
+**Roll No.:** 590014327
 
 ---
 
-## Lab
+## 📚 Theory
 
-- [Experiment 1](./Lab/Exp%201/Report.md)
+### Task 1 — Node.js & EJS
+
+- [Node.js & Server.js](./Theory/Task%201/Node.js)
+- Brief Introduction to Templating with EJS
+
+### Task 2 — Flask
+
+- [Building a Flask Server](./Theory/Task%202)
+
+---
+
+## 🧪 Lab
+
+### Experiment 1 — HTML5
+
+- [Create a Web Page with HTML5 Elements](./Lab/Exp%201/Report.md)
+
+---
+
+## 🛠️ Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript
+- Node.js
+- EJS
+- Python
+- Flask
+
+---
+
+## 📁 Repository Structure
+
+```text
+Backend-Development/
+│
+├── Theory/
+│   ├── Task 1/
+│   │   └── Node.js/
+│   │
+│   └── Task 2/
+│       └── Flask/
+│
+└── Lab/
+    └── Exp 1/

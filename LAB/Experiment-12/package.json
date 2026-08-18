@@ -1,0 +1,25 @@
+{
+  "name": "lavanya-express-ejs-lab",
+  "version": "1.0.0",
+  "description": "Node.js, Express.js, and EJS Lab - Backend Development",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "ejs",
+    "backend-development"
+  ],
+  "author": "Lavanya Agrawal",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

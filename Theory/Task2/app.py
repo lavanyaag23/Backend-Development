@@ -8,7 +8,7 @@ students = [
     {"id": 3, "name": "Rohan", "branch": "IT"}
 ]
 
-@app.route("/")
+@app.route("/")        
 def home():
     return "Student Management API"
 

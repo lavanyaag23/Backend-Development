@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student API Client</title>
+</head>
+<body>
+  <h1>Students</h1>
+  <ul id="student-list"></ul>
+
+  <script>
+    async function loadStudents() {
+      const response = await fetch("http://localhost:3000/students");
+      const students = await response.json();
+
+      const list = document.getElementById("student-list");
+      students.forEach(student => {
+        const li = document.createElement("li");
+        li.textContent = `${student.name} — ${student.branch}`;
+        list.appendChild(li);
+      });
+    }
+
+    loadStudents();
+  </script>
+</body>
+</html>

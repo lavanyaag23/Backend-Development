@@ -16,6 +16,14 @@
 
 - [Building a Flask Server](./Theory/Task%202)
 
+### Task 3
+
+- [Task 3](./Theory/Task3)
+
+### Task 4 — FastAPI
+
+- [Building a FastAPI Server](./Theory/Task4)
+
 ---
 
 ## 🧪 Lab
@@ -32,9 +40,12 @@
 - CSS3
 - JavaScript
 - Node.js
+- Express.js
 - EJS
 - Python
 - Flask
+- FastAPI
+- Uvicorn
 
 ---
 
@@ -45,10 +56,21 @@ Backend-Development/
 │
 ├── Theory/
 │   ├── Task 1/
-│   │  
+│   │   ├── server.js
+│   │   ├── package.json
+│   │   └── ...
 │   │
-│   └── Task 2/
-│   
+│   ├── Task 2/
+│   │   ├── app.py
+│   │   └── ...
+│   │
+│   ├── Task 3/
+│   │   └── ...
+│   │
+│   └── Task 4/
+│       ├── main.py
+│       └── ...
 │
 └── Lab/
     └── Exp 1/
+        └── Report.md

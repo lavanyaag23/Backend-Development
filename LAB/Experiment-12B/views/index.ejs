@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Session To-Do List</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+        }
+
+        body.light {
+            background: white;
+            color: black;
+        }
+
+        body.dark {
+            background: #222;
+            color: white;
+        }
+
+        input {
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body class="<%= theme %>">
+
+    <h1>📝 Session-Based To-Do List</h1>
+
+    <!-- Add Todo -->
+    <form action="/add" method="POST">
+        <input
+            type="text"
+            name="todo"
+            placeholder="Enter a task"
+            required
+        >
+
+        <button type="submit">
+            Add Todo
+        </button>
+    </form>
+
+    <h2>Your Tasks</h2>
+
+    <% if (todos.length === 0) { %>
+
+        <p>No tasks added yet.</p>
+
+    <% } else { %>
+
+        <ul>
+            <% todos.forEach((todo, index) => { %>
+
+                <li>
+                    <%= todo %>
+
+                    <form
+                        action="/delete/<%= index %>"
+                        method="POST"
+                        style="display:inline;"
+                    >
+                        <button type="submit">
+                            Delete
+                        </button>
+                    </form>
+                </li>
+
+            <% }); %>
+        </ul>
+
+    <% } %>
+
+    <hr>
+
+    <h2>Preferred Theme</h2>
+
+    <form action="/theme" method="POST">
+
+        <button type="submit" name="theme" value="light">
+            ☀️ Light
+        </button>
+
+        <button type="submit" name="theme" value="dark">
+            🌙 Dark
+        </button>
+
+    </form>
+
+</body>
+</html>

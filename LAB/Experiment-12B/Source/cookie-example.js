@@ -5,7 +5,7 @@ const app = express();
 app.use(cookieParser());
 
 app.get('/set-cookie', (req, res) => {
-    res.cookie('username', 'JohnDoe', { maxAge: 900000 });
+    res.cookie('username', 'Lavanya', { maxAge: 900000 });
     res.send('Cookie has been set');
 });
 

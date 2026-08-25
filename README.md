@@ -30,7 +30,15 @@
 
 ### Experiment 1 — HTML5
 
-- [Create a Web Page with HTML5 Elements](./Lab/Exp%201/Report.md)
+- [Create a Web Page with HTML5 Elements](./LAB/Experiment-1/Report.md)
+
+### Experiment 12A — Cookies and Sessions
+
+- [Cookies and Sessions](./LAB/Experiment-12A)
+
+### Experiment 12B — Session-Based To-Do List & Theme Cookie
+
+- [Session-Based To-Do List](./LAB/Experiment-12B)
 
 ---
 
@@ -42,6 +50,8 @@
 - Node.js
 - Express.js
 - EJS
+- Cookie Parser
+- Express Session
 - Python
 - Flask
 - FastAPI
@@ -54,23 +64,46 @@
 ```text
 Backend-Development/
 │
+├── LAB/
+│   │
+│   ├── Experiment-1/
+│   │   ├── index.html
+│   │   ├── Report.md
+│   │   ├── script.js
+│   │   └── style.css
+│   │
+│   ├── Experiment-12A/
+│   │   ├── views/
+│   │   ├── app.js
+│   │   ├── nodemon.json
+│   │   ├── package.json
+│   │   ├── package-lock.json
+│   │   └── script.js
+│   │
+│   └── Experiment-12B/
+│       ├── Source/
+│       ├── views/
+│       │   └── index.ejs
+│       ├── app.js
+│       ├── server.js
+│       ├── package.json
+│       └── package-lock.json
+│
 ├── Theory/
 │   ├── Task 1/
-│   │   ├── server.js
-│   │   ├── package.json
+│   │   ├── Node.js
 │   │   └── ...
 │   │
 │   ├── Task 2/
-│   │   ├── app.py
 │   │   └── ...
 │   │
-│   ├── Task 3/
+│   ├── Task3/
 │   │   └── ...
 │   │
-│   └── Task 4/
+│   └── Task4/
 │       ├── main.py
 │       └── ...
 │
-└── Lab/
-    └── Exp 1/
-        └── Report.md
+├── .gitignore
+├── index.html
+└── README.md

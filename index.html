@@ -1,45 +1,621 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Backend Development | Lavanya Agrawal</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: #ffffff;
+            background: #080b18;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        body::before {
+            content: "";
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(99,102,241,0.25), transparent 65%);
+            top: -200px;
+            left: -200px;
+            animation: float 8s ease-in-out infinite;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(168,85,247,0.20), transparent 65%);
+            bottom: -250px;
+            right: -200px;
+            animation: float 10s ease-in-out infinite reverse;
+            z-index: -2;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(80px, 50px);
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(8, 11, 24, 0.75);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        nav a {
+            color: #d1d5db;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #a78bfa;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            animation: fadeUp 1s ease;
+        }
+
+        .terminal {
+            display: inline-block;
+            padding: 10px 18px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(129,140,248,0.35);
+            border-radius: 30px;
+            background: rgba(99,102,241,0.08);
+            color: #a5b4fc;
+            font-family: monospace;
+            font-size: 14px;
+            box-shadow: 0 0 25px rgba(99,102,241,0.15);
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 90px);
+            line-height: 1;
+            margin-bottom: 25px;
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #a5b4fc,
+                #c084fc,
+                #ffffff
+            );
+            background-size: 300%;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: gradientMove 6s linear infinite;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0%;
+            }
+
+            100% {
+                background-position: 300%;
+            }
+        }
+
+        .hero p {
+            color: #9ca3af;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            color: #a78bfa;
+            font-weight: 600;
+        }
+
+        .buttons {
+            margin-top: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            margin: 8px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            box-shadow: 0 10px 30px rgba(99,102,241,0.25);
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(139,92,246,0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #6366f1;
+        }
+
+        /* Sections */
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #9ca3af;
+        }
+
+        /* Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            position: relative;
+            padding: 30px;
+            border-radius: 18px;
+            background: rgba(255,255,255,0.045);
+            border: 1px solid rgba(255,255,255,0.08);
+            backdrop-filter: blur(12px);
+            transition: 0.4s;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: #6366f1;
+            filter: blur(70px);
+            opacity: 0;
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(129,140,248,0.5);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+        }
+
+        .card:hover::before {
+            opacity: 0.25;
+        }
+
+        .icon {
+            font-size: 35px;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+
+        .card p {
+            color: #9ca3af;
+            line-height: 1.6;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 18px;
+            color: #a5b4fc;
+            text-decoration: none;
+        }
+
+        .card a:hover {
+            color: #c4b5fd;
+        }
+
+        /* Technologies */
+        .tech-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .tech {
+            padding: 12px 20px;
+            border-radius: 30px;
+            background: rgba(99,102,241,0.08);
+            border: 1px solid rgba(129,140,248,0.25);
+            color: #c4b5fd;
+            transition: 0.3s;
+        }
+
+        .tech:hover {
+            transform: scale(1.08);
+            background: rgba(99,102,241,0.18);
+            box-shadow: 0 0 20px rgba(99,102,241,0.2);
+        }
+
+        /* Student Card */
+        .student {
+            max-width: 650px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .student-name {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .roll {
+            color: #a5b4fc;
+            font-family: monospace;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            color: #6b7280;
+        }
+
+        footer span {
+            color: #a78bfa;
+        }
+
+        /* Animation */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            animation: fadeUp 1s ease both;
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav div:last-child {
+                display: none;
+            }
+
+            section {
+                padding: 65px 5%;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-    <h1>Backend Development</h1>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">&lt;/&gt; Backend Development</div>
 
-    <h2>Student Details</h2>
-    <p><strong>Name:</strong> Lavanya Agrawal</p>
-    <p><strong>Roll No.:</strong> 590014327</p>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#theory">Theory</a>
+            <a href="#labs">Labs</a>
+            <a href="#technologies">Technologies</a>
+        </div>
+    </nav>
 
-    <h2>Theory</h2>
-    <ul>
-        <li>Task 1 - Node.js, Express.js & EJS</li>
-        <li>Task 2 - Building a Flask Server</li>
-        <li>Task 3 - Backend Development</li>
-        <li>Task 4 - Building a FastAPI Server</li>
-    </ul>
+    <!-- Hero -->
+    <section class="hero" id="home">
 
-    <h2>Lab Experiments</h2>
-    <ul>
-        <li>Experiment 1 - HTML5 Web Page</li>
-        <li>Experiment 12 - Node.js & Express.js</li>
-    </ul>
+        <div class="hero-content">
 
-    <h2>Technologies Used</h2>
-    <ul>
-        <li>HTML5</li>
-        <li>CSS3</li>
-        <li>JavaScript</li>
-        <li>Node.js</li>
-        <li>Express.js</li>
-        <li>EJS</li>
-        <li>Python</li>
-        <li>Flask</li>
-        <li>FastAPI</li>
-        <li>Uvicorn</li>
-    </ul>
+            <div class="terminal">
+                &gt; initializing backend_development...
+            </div>
 
-    <p><strong>Backend Development Repository</strong></p>
+            <h1>Backend<br>Development</h1>
+
+            <p>
+                A collection of my
+                <span class="highlight">backend development</span>
+                theory tasks and laboratory experiments.
+            </p>
+
+            <p>
+                Exploring servers, APIs, sessions, cookies,
+                databases and modern backend technologies.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    class="btn"
+                    href="https://github.com/lavanyaag23/Backend-Development"
+                    target="_blank">
+                    ⭐ View Repository
+                </a>
+
+                <a
+                    class="btn btn-outline"
+                    href="#labs">
+                    🧪 View Labs
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Student -->
+    <section>
+
+        <div class="student card reveal">
+
+            <div class="icon">👩‍💻</div>
+
+            <div class="student-name">
+                Lavanya Agrawal
+            </div>
+
+            <div class="roll">
+                Roll No. 590014327
+            </div>
+
+            <p style="margin-top:20px;">
+                Computer Science Engineering Student
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Theory -->
+    <section id="theory">
+
+        <div class="section-title">
+            <h2>📚 Theory Tasks</h2>
+            <p>Backend concepts and server-side development</p>
+        </div>
+
+        <div class="grid">
+
+            <div class="card reveal">
+                <div class="icon">🟢</div>
+                <h3>Task 1</h3>
+                <p>
+                    Node.js, Express.js and EJS with
+                    server-side development and templating.
+                </p>
+                <a href="./Theory/Task%201/Node.js">
+                    Explore Task →
+                </a>
+            </div>
+
+            <div class="card reveal">
+                <div class="icon">🐍</div>
+                <h3>Task 2</h3>
+                <p>
+                    Building a backend server using
+                    Python and Flask.
+                </p>
+                <a href="./Theory/Task%202">
+                    Explore Task →
+                </a>
+            </div>
+
+            <div class="card reveal">
+                <div class="icon">⚙️</div>
+                <h3>Task 3</h3>
+                <p>
+                    Backend development concepts and
+                    practical implementation.
+                </p>
+                <a href="./Theory/Task3">
+                    Explore Task →
+                </a>
+            </div>
+
+            <div class="card reveal">
+                <div class="icon">🚀</div>
+                <h3>Task 4</h3>
+                <p>
+                    Building REST APIs using FastAPI
+                    and running them with Uvicorn.
+                </p>
+                <a href="./Theory/Task4">
+                    Explore Task →
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Labs -->
+    <section id="labs">
+
+        <div class="section-title">
+            <h2>🧪 Lab Experiments</h2>
+            <p>Hands-on backend development experiments</p>
+        </div>
+
+        <div class="grid">
+
+            <div class="card reveal">
+
+                <div class="icon">🌐</div>
+
+                <h3>Experiment 1</h3>
+
+                <p>
+                    Creating a web page using HTML5,
+                    CSS and JavaScript.
+                </p>
+
+                <a href="./LAB/Experiment-1/Report.md">
+                    View Experiment →
+                </a>
+
+            </div>
+
+            <div class="card reveal">
+
+                <div class="icon">🍪</div>
+
+                <h3>Experiment 12A</h3>
+
+                <p>
+                    Working with cookies and sessions
+                    using Node.js and Express.js.
+                </p>
+
+                <a href="./LAB/Experiment-12A">
+                    View Experiment →
+                </a>
+
+            </div>
+
+            <div class="card reveal">
+
+                <div class="icon">📝</div>
+
+                <h3>Experiment 12B</h3>
+
+                <p>
+                    Session-based To-Do List Manager
+                    with theme preference cookies.
+                </p>
+
+                <a href="./LAB/Experiment-12B">
+                    View Experiment →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Technologies -->
+    <section id="technologies">
+
+        <div class="section-title">
+
+            <h2>🛠️ Technologies</h2>
+
+            <p>
+                Tools and technologies used throughout
+                the coursework
+            </p>
+
+        </div>
+
+        <div class="tech-container">
+
+            <div class="tech">HTML5</div>
+            <div class="tech">CSS3</div>
+            <div class="tech">JavaScript</div>
+            <div class="tech">Node.js</div>
+            <div class="tech">Express.js</div>
+            <div class="tech">EJS</div>
+            <div class="tech">Cookie Parser</div>
+            <div class="tech">Express Session</div>
+            <div class="tech">Python</div>
+            <div class="tech">Flask</div>
+            <div class="tech">FastAPI</div>
+            <div class="tech">Uvicorn</div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            Built with ❤️ by
+            <span>Lavanya Agrawal</span>
+        </p>
+
+        <p style="margin-top:10px;">
+            Backend Development • 2026
+        </p>
+
+    </footer>
 
 </body>
 </html>

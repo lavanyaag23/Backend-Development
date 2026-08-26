@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow | To-Do App</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #667eea,
+                    #764ba2
+                );
+
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+
+            background: rgba(255, 255, 255, 0.95);
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.25);
+
+            animation: slideUp 0.6s ease;
+        }
+
+        @keyframes slideUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 38px;
+            color: #4f46e5;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: #6b7280;
+            font-size: 15px;
+        }
+
+        .storage-badge {
+            display: inline-block;
+
+            margin-top: 12px;
+
+            padding: 7px 14px;
+
+            border-radius: 20px;
+
+            background: #eef2ff;
+
+            color: #4f46e5;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 10px;
+
+            margin-bottom: 25px;
+        }
+
+        #todoInput {
+            flex: 1;
+
+            padding: 14px 16px;
+
+            border: 2px solid #e5e7eb;
+
+            border-radius: 10px;
+
+            outline: none;
+
+            font-size: 15px;
+
+            transition: 0.3s;
+        }
+
+        #todoInput:focus {
+            border-color: #6366f1;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(99, 102, 241, 0.1);
+        }
+
+        #addBtn {
+            padding: 0 22px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: #6366f1;
+
+            color: white;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        #addBtn:hover {
+            background: #4f46e5;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 20px
+                rgba(79, 70, 229, 0.3);
+        }
+
+        .task-heading {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 15px;
+        }
+
+        .task-heading h2 {
+            color: #1f2937;
+
+            font-size: 20px;
+        }
+
+        #todoList {
+            list-style: none;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
+        }
+
+        #todoList li {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 15px;
+
+            padding: 14px 16px;
+
+            background: #f8fafc;
+
+            border: 1px solid #e5e7eb;
+
+            border-radius: 10px;
+
+            color: #374151;
+
+            animation: taskAppear 0.3s ease;
+
+            transition: 0.3s;
+        }
+
+        #todoList li:hover {
+            transform: translateX(5px);
+
+            border-color: #a5b4fc;
+
+            background: #eef2ff;
+        }
+
+        @keyframes taskAppear {
+
+            from {
+                opacity: 0;
+                transform: translateX(-15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        #todoList button {
+            border: none;
+
+            padding: 7px 12px;
+
+            border-radius: 7px;
+
+            background: #fee2e2;
+
+            color: #dc2626;
+
+            cursor: pointer;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        #todoList button:hover {
+            background: #dc2626;
+
+            color: white;
+        }
+
+        .empty-message {
+            text-align: center;
+
+            padding: 30px 10px;
+
+            color: #9ca3af;
+
+            font-size: 14px;
+        }
+
+        .footer {
+            text-align: center;
+
+            margin-top: 25px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid #e5e7eb;
+
+            color: #9ca3af;
+
+            font-size: 13px;
+        }
+
+        @media (max-width: 500px) {
+
+            .container {
+                padding: 25px 20px;
+            }
+
+            .header h1 {
+                font-size: 30px;
+            }
+
+            .input-area {
+                flex-direction: column;
+            }
+
+            #addBtn {
+                padding: 13px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="header">
+
+            <h1>✨ TaskFlow</h1>
+
+            <p>
+                Simple, fast and organized To-Do Manager
+            </p>
+
+            <!-- Change this text according to the folder -->
+
+            <span class="storage-badge">
+                Browser Storage
+            </span>
+
+        </header>
+
+
+        <section class="input-area">
+
+            <input
+                type="text"
+                id="todoInput"
+                placeholder="Enter your task..."
+                autocomplete="off"
+            >
+
+            <button id="addBtn">
+                + Add Task
+            </button>
+
+        </section>
+
+
+        <section>
+
+            <div class="task-heading">
+
+                <h2>My Tasks</h2>
+
+                <span id="taskCount">
+                    0 tasks
+                </span>
+
+            </div>
+
+            <ul id="todoList"></ul>
+
+            <div
+                id="emptyMessage"
+                class="empty-message"
+            >
+                📝 No tasks yet. Add your first task!
+            </div>
+
+        </section>
+
+
+        <footer class="footer">
+
+            <p>
+                To-Do App |
+                Frontend JavaScript |
+                LocalStorage 
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

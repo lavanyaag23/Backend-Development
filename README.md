@@ -24,6 +24,10 @@
 
 - [Building a FastAPI Server](./Theory/Task4)
 
+### Task 10 — PostgreSQL & JSONB
+
+- [PostgreSQL JSONB](./Theory/Task10)
+
 ---
 
 ## 🧪 Lab
@@ -40,22 +44,85 @@
 
 - [Session-Based To-Do List](./LAB/Experiment-12B)
 
+### Experiment 13A — Mongoose & MongoDB
+
+- [Mongoose Demo](./LAB/Experiment-13A/mongoose-demo)
+
+This experiment demonstrates:
+
+- MongoDB Atlas connection
+- Mongoose
+- MongoDB schemas
+- Mongoose models
+- Express.js
+- CRUD operations
+- User management
+- Password hashing
+
+### Assignment 1 — To-Do Application
+
+- [To-Do Application](./Assignment1/todo-app)
+
+The To-Do application is a backend REST API built using:
+
+- Node.js
+- Express.js
+- MongoDB Atlas
+- Mongoose
+- JWT Authentication
+- bcryptjs
+
+Features include:
+
+- User registration
+- User login
+- JWT-based authentication
+- Create Todo
+- Read Todos
+- Update Todo
+- Delete Todo
+
 ---
 
 ## 🛠️ Technologies Used
 
+### Frontend
+
 - HTML5
 - CSS3
 - JavaScript
+- EJS
+
+### Backend
+
 - Node.js
 - Express.js
-- EJS
-- Cookie Parser
-- Express Session
 - Python
 - Flask
 - FastAPI
 - Uvicorn
+
+### Databases
+
+- MongoDB
+- MongoDB Atlas
+- Mongoose
+- PostgreSQL
+- JSONB
+
+### Authentication & Sessions
+
+- JWT
+- bcryptjs
+- Cookie Parser
+- Express Session
+
+### Tools
+
+- Visual Studio Code
+- Git
+- GitHub
+- npm
 
 ---
 
@@ -80,16 +147,43 @@ Backend-Development/
 │   │   ├── package-lock.json
 │   │   └── script.js
 │   │
-│   └── Experiment-12B/
-│       ├── Source/
-│       ├── views/
-│       │   └── index.ejs
-│       ├── app.js
-│       ├── server.js
+│   ├── Experiment-12B/
+│   │   ├── Source/
+│   │   ├── views/
+│   │   │   └── index.ejs
+│   │   ├── app.js
+│   │   ├── server.js
+│   │   ├── package.json
+│   │   └── package-lock.json
+│   │
+│   └── Experiment-13A/
+│       └── mongoose-demo/
+│           ├── models/
+│           ├── routes/
+│           ├── middleware/
+│           ├── server.js
+│           ├── package.json
+│           └── package-lock.json
+│
+├── Assignment1/
+│   └── todo-app/
+│       ├── config/
+│       │   └── db.js
+│       ├── middleware/
+│       │   └── auth.js
+│       ├── models/
+│       │   ├── User.js
+│       │   └── Todo.js
+│       ├── routes/
+│       │   ├── auth.js
+│       │   └── todos.js
+│       ├── .env
 │       ├── package.json
-│       └── package-lock.json
+│       ├── package-lock.json
+│       └── server.js
 │
 ├── Theory/
+│   │
 │   ├── Task 1/
 │   │   ├── Node.js
 │   │   └── ...
@@ -100,8 +194,11 @@ Backend-Development/
 │   ├── Task3/
 │   │   └── ...
 │   │
-│   └── Task4/
-│       ├── main.py
+│   ├── Task4/
+│   │   ├── main.py
+│   │   └── ...
+│   │
+│   └── Task10/
 │       └── ...
 │
 ├── .gitignore

@@ -26,7 +26,21 @@
 
 ### Task 10 — PostgreSQL & JSONB
 
-- [PostgreSQL JSONB](./Theory/Task10)
+- [PostgreSQL & JSONB](./Theory/Task10)
+
+### Assignment 2 — MongoDB & PostgreSQL JSONB
+
+- [Assignment 2](./Theory/Assignment2)
+
+This assignment demonstrates:
+
+- MongoDB with Mongoose
+- MongoDB schemas and models
+- MongoDB queries and filtering
+- Flexible document attributes
+- PostgreSQL
+- JSONB data type
+- JSONB queries and operations
 
 ---
 
@@ -59,6 +73,54 @@ This experiment demonstrates:
 - User management
 - Password hashing
 
+---
+
+## 📝 Exams / Practical Projects
+
+### Exam 01-A — Notes Application
+
+- [Notes Application](./LAB/Exam-01-A/NotesApp)
+
+A server-side Notes application built using:
+
+- Node.js
+- Express.js
+- EJS
+- MongoDB
+- MongoDB Driver
+
+Features include:
+
+- View notes
+- Create notes
+- Store notes in MongoDB
+- Server-side rendering using EJS
+
+### Exam 01-C — Simple CMS
+
+- [Simple CMS](./LAB/Exam-01-C/SimpleCMS)
+
+A simple Content Management System built using:
+
+- Node.js
+- Express.js
+- EJS
+- MongoDB
+- MongoDB Driver
+
+Features include:
+
+- View all posts
+- Create a new post
+- View individual posts
+- MongoDB database integration
+- Server-side rendering using EJS
+- Form validation
+
+---
+
+## 📋 Assignments
+
 ### Assignment 1 — To-Do Application
 
 - [To-Do Application](./Assignment1/todo-app)
@@ -82,11 +144,22 @@ Features include:
 - Update Todo
 - Delete Todo
 
+### Assignment 2 — MongoDB & PostgreSQL
+
+- [Assignment 2](./Theory/Assignment2)
+
+The assignment contains implementations using:
+
+- MongoDB
+- Mongoose
+- PostgreSQL
+- JSONB
+
 ---
 
 ## 🛠️ Technologies Used
 
-### Frontend
+### Frontend / Templating
 
 - HTML5
 - CSS3
@@ -156,11 +229,27 @@ Backend-Development/
 │   │   ├── package.json
 │   │   └── package-lock.json
 │   │
-│   └── Experiment-13A/
-│       └── mongoose-demo/
-│           ├── models/
-│           ├── routes/
-│           ├── middleware/
+│   ├── Experiment-13A/
+│   │   └── mongoose-demo/
+│   │       ├── models/
+│   │       ├── routes/
+│   │       ├── middleware/
+│   │       ├── server.js
+│   │       ├── package.json
+│   │       └── package-lock.json
+│   │
+│   ├── Exam-01-A/
+│   │   └── NotesApp/
+│   │       ├── views/
+│   │       ├── public/
+│   │       ├── server.js
+│   │       ├── package.json
+│   │       └── package-lock.json
+│   │
+│   └── Exam-01-C/
+│       └── SimpleCMS/
+│           ├── views/
+│           ├── public/
 │           ├── server.js
 │           ├── package.json
 │           └── package-lock.json
@@ -177,7 +266,6 @@ Backend-Development/
 │       ├── routes/
 │       │   ├── auth.js
 │       │   └── todos.js
-│       ├── .env
 │       ├── package.json
 │       ├── package-lock.json
 │       └── server.js
@@ -198,8 +286,15 @@ Backend-Development/
 │   │   ├── main.py
 │   │   └── ...
 │   │
-│   └── Task10/
-│       └── ...
+│   ├── Task10/
+│   │   └── ...
+│   │
+│   └── Assignment2/
+│       ├── README.md
+│       ├── mongodb/
+│       │   └── assignment.js
+│       └── postgresql/
+│           └── assignment.sql
 │
 ├── .gitignore
 ├── index.html

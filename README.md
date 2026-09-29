@@ -7,40 +7,131 @@
 
 ## 📚 Theory
 
+This section contains the theory tasks, backend programming exercises, database work, and related assignments completed as part of the Backend Development course.
+
 ### Task 1 — Node.js & EJS
 
-- [Node.js & Server.js](./Theory/Task%201/Node.js)
-- Brief Introduction to Templating with EJS
+- [Task 1](./Theory/Task1)
+
+Covers:
+- Node.js fundamentals
+- Server-side JavaScript
+- Express.js
+- EJS templating
+- Basic server setup
+
+---
 
 ### Task 2 — Flask
 
-- [Building a Flask Server](./Theory/Task%202)
+- [Task 2](./Theory/Task2)
 
-### Task 3
+Covers:
+- Python Flask
+- Flask server
+- Routes
+- Request and response handling
+
+---
+
+### Task 3 — HTML & Web Fundamentals
 
 - [Task 3](./Theory/Task3)
 
+Contains:
+- HTML
+- Web page structure
+- Basic frontend implementation
+
+---
+
 ### Task 4 — FastAPI
 
-- [Building a FastAPI Server](./Theory/Task4)
+- [Task 4](./Theory/Task4)
 
-### Task 10 — PostgreSQL & JSONB
+Covers:
+- FastAPI
+- Python backend development
+- API creation
+- Server execution
 
-- [PostgreSQL & JSONB](./Theory/Task10)
+---
 
-### Assignment 2 — MongoDB & PostgreSQL JSONB
+### Task 5
+
+- [Task 5](./Theory/Task5)
+
+Backend development concepts and practical work.
+
+---
+
+### Task 6 — Storage & To-Do Application
+
+- [Task 6](./Theory/Task6)
+
+Contains:
+- LocalStorage
+- SessionStorage
+- To-Do application
+- Client-side data storage
+
+---
+
+### Task 7 — JavaScript
+
+- [Task 7](./Theory/Task7)
+
+Contains:
+- HTML
+- JavaScript
+- Client-side scripting
+- DOM-based interaction
+
+---
+
+### Task 8 — Server-Side Rendering with Python
+
+- [Task 8](./Theory/Task8)
+
+Contains:
+- Server-Side Rendering
+- Python backend
+- Templates
+- Flask
+- Dynamic HTML rendering
+
+---
+
+### Task 9 — Student Management System
+
+- [Task 9](./Theory/Task9)
+
+Contains:
+- Node.js
+- npm
+- Backend development
+- Student management functionality
+
+---
+
+### Assignment 2 — PostgreSQL JSONB & MongoDB
 
 - [Assignment 2](./Theory/Assignment2)
 
-This assignment demonstrates:
+This assignment explores PostgreSQL's `JSONB` functionality and compares it with MongoDB.
 
-- MongoDB with Mongoose
-- MongoDB schemas and models
-- MongoDB queries and filtering
-- Flexible document attributes
-- PostgreSQL
-- JSONB data type
-- JSONB queries and operations
+Topics covered:
+
+- PostgreSQL JSONB
+- SQL and NoSQL concepts
+- JSONB data storage
+- JSONB operators
+- JSONB queries
+- GIN indexing
+- MongoDB documents
+- MongoDB queries
+- PostgreSQL JSONB vs MongoDB
+- Document-oriented data handling
 
 ---
 
@@ -48,23 +139,48 @@ This assignment demonstrates:
 
 ### Experiment 1 — HTML5
 
-- [Create a Web Page with HTML5 Elements](./LAB/Experiment-1/Report.md)
+- [Experiment 1](./LAB/Experiment-1/Report.md)
+
+Covers:
+- HTML5 elements
+- Page structure
+- CSS
+- JavaScript
+
+---
 
 ### Experiment 12A — Cookies and Sessions
 
-- [Cookies and Sessions](./LAB/Experiment-12A)
+- [Experiment 12A](./LAB/Experiment-12A)
 
-### Experiment 12B — Session-Based To-Do List & Theme Cookie
+Covers:
+- Cookies
+- Sessions
+- Express.js
+- Server-side session management
 
-- [Session-Based To-Do List](./LAB/Experiment-12B)
+---
+
+### Experiment 12B — Session-Based To-Do List
+
+- [Experiment 12B](./LAB/Experiment-12B)
+
+Features:
+
+- Session-based To-Do List
+- Theme cookie
+- EJS templates
+- Express.js
+
+---
 
 ### Experiment 13A — Mongoose & MongoDB
 
-- [Mongoose Demo](./LAB/Experiment-13A/mongoose-demo)
+- [Experiment 13A](./LAB/Experiment-13A/mongoose-demo)
 
-This experiment demonstrates:
+Demonstrates:
 
-- MongoDB Atlas connection
+- MongoDB Atlas
 - Mongoose
 - MongoDB schemas
 - Mongoose models
@@ -75,55 +191,9 @@ This experiment demonstrates:
 
 ---
 
-## 📝 Exams / Practical Projects
-
-### Exam 01-A — Notes Application
-
-- [Notes Application](./LAB/Exam-01-A/NotesApp)
-
-A server-side Notes application built using:
-
-- Node.js
-- Express.js
-- EJS
-- MongoDB
-- MongoDB Driver
-
-Features include:
-
-- View notes
-- Create notes
-- Store notes in MongoDB
-- Server-side rendering using EJS
-
-### Exam 01-C — Simple CMS
-
-- [Simple CMS](./LAB/Exam-01-C/SimpleCMS)
-
-A simple Content Management System built using:
-
-- Node.js
-- Express.js
-- EJS
-- MongoDB
-- MongoDB Driver
-
-Features include:
-
-- View all posts
-- Create a new post
-- View individual posts
-- MongoDB database integration
-- Server-side rendering using EJS
-- Form validation
-
----
-
-## 📋 Assignments
-
 ### Assignment 1 — To-Do Application
 
-- [To-Do Application](./Assignment1/todo-app)
+- [Assignment 1](./Assignment1/todo-app)
 
 The To-Do application is a backend REST API built using:
 
@@ -144,22 +214,59 @@ Features include:
 - Update Todo
 - Delete Todo
 
-### Assignment 2 — MongoDB & PostgreSQL
+---
 
-- [Assignment 2](./Theory/Assignment2)
+### Exam 01-A — Notes Application
 
-The assignment contains implementations using:
+- [Notes Application](./LAB/Exam-01-A/NotesApp)
 
+A server-side Notes Application developed using:
+
+- Node.js
+- Express.js
+- EJS
 - MongoDB
-- Mongoose
-- PostgreSQL
-- JSONB
+- HTML
+- CSS
+
+Features include:
+
+- View notes
+- Create notes
+- Store notes in MongoDB
+- Server-side rendering with EJS
+- MongoDB database integration
+
+---
+
+### Exam 01-C — Simple CMS
+
+- [Simple CMS](./LAB/Exam-01-C/SimpleCMS)
+
+A basic Content Management System developed using:
+
+- Node.js
+- Express.js
+- EJS
+- MongoDB
+- HTML
+- CSS
+
+Features include:
+
+- View posts
+- Create posts
+- Individual post pages
+- MongoDB storage
+- Server-side rendering
+- Form validation
+- MongoDB ObjectId handling
 
 ---
 
 ## 🛠️ Technologies Used
 
-### Frontend / Templating
+### Frontend
 
 - HTML5
 - CSS3
@@ -196,6 +303,7 @@ The assignment contains implementations using:
 - Git
 - GitHub
 - npm
+- PowerShell
 
 ---
 
@@ -223,7 +331,6 @@ Backend-Development/
 │   ├── Experiment-12B/
 │   │   ├── Source/
 │   │   ├── views/
-│   │   │   └── index.ejs
 │   │   ├── app.js
 │   │   ├── server.js
 │   │   ├── package.json
@@ -238,63 +345,65 @@ Backend-Development/
 │   │       ├── package.json
 │   │       └── package-lock.json
 │   │
+│   ├── Assignment1/
+│   │   └── todo-app/
+│   │       ├── config/
+│   │       ├── middleware/
+│   │       ├── models/
+│   │       ├── routes/
+│   │       ├── package.json
+│   │       ├── package-lock.json
+│   │       └── server.js
+│   │
 │   ├── Exam-01-A/
 │   │   └── NotesApp/
-│   │       ├── views/
 │   │       ├── public/
+│   │       │   └── style.css
+│   │       ├── views/
+│   │       │   ├── index.ejs
+│   │       │   └── new-note.ejs
 │   │       ├── server.js
 │   │       ├── package.json
 │   │       └── package-lock.json
 │   │
 │   └── Exam-01-C/
 │       └── SimpleCMS/
-│           ├── views/
 │           ├── public/
-│           ├── server.js
-│           ├── package.json
-│           └── package-lock.json
-│
-├── Assignment1/
-│   └── todo-app/
-│       ├── config/
-│       │   └── db.js
-│       ├── middleware/
-│       │   └── auth.js
-│       ├── models/
-│       │   ├── User.js
-│       │   └── Todo.js
-│       ├── routes/
-│       │   ├── auth.js
-│       │   └── todos.js
-│       ├── package.json
-│       ├── package-lock.json
-│       └── server.js
+│           ├── views/
+│           └── server.js
 │
 ├── Theory/
 │   │
-│   ├── Task 1/
-│   │   ├── Node.js
-│   │   └── ...
+│   ├── Assignment2/
+│   │   ├── README.md
+│   │   ├── mongodb/
+│   │   │   └── assignment.js
+│   │   └── postgresql/
+│   │       └── assignment.sql
 │   │
-│   ├── Task 2/
-│   │   └── ...
-│   │
+│   ├── Task1/
+│   ├── Task2/
+│   │   └── app.py
 │   ├── Task3/
-│   │   └── ...
-│   │
+│   │   └── index.html
 │   ├── Task4/
-│   │   ├── main.py
-│   │   └── ...
-│   │
-│   ├── Task10/
-│   │   └── ...
-│   │
-│   └── Assignment2/
-│       ├── README.md
-│       ├── mongodb/
-│       │   └── assignment.js
-│       └── postgresql/
-│           └── assignment.sql
+│   │   └── main.py
+│   ├── Task5/
+│   ├── Task6/
+│   │   └── TO-DO-App/
+│   │       ├── LocalStorage/
+│   │       └── SessionStorage/
+│   ├── Task7/
+│   │   ├── index.html
+│   │   └── script.js
+│   ├── Task8/
+│   │   └── ssr-python/
+│   │       ├── templates/
+│   │       ├── main.py
+│   │       └── requirements.txt
+│   └── Task9/
+│       ├── package.json
+│       └── package-lock.json
 │
 ├── .gitignore
 ├── index.html

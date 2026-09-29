@@ -6,635 +6,531 @@
 
     <title>Backend Development | Lavanya Agrawal</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Segoe UI", Arial, sans-serif;
-        }
+    <meta
+        name="description"
+        content="Backend Development coursework, laboratory experiments, assignments, technologies and projects by Lavanya Agrawal."
+    >
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            color: #ffffff;
-            background: #080b18;
-            overflow-x: hidden;
-        }
-
-        /* Animated Background */
-        body::before {
-            content: "";
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(99,102,241,0.25), transparent 65%);
-            top: -200px;
-            left: -200px;
-            animation: float 8s ease-in-out infinite;
-            z-index: -2;
-        }
-
-        body::after {
-            content: "";
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(168,85,247,0.20), transparent 65%);
-            bottom: -250px;
-            right: -200px;
-            animation: float 10s ease-in-out infinite reverse;
-            z-index: -2;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translate(0, 0);
-            }
-
-            50% {
-                transform: translate(80px, 50px);
-            }
-        }
-
-        /* Navigation */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 18px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(8, 11, 24, 0.75);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: 700;
-            background: linear-gradient(90deg, #818cf8, #c084fc);
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
-        nav a {
-            color: #d1d5db;
-            text-decoration: none;
-            margin-left: 25px;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #a78bfa;
-        }
-
-        /* Hero */
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        .hero-content {
-            max-width: 900px;
-            animation: fadeUp 1s ease;
-        }
-
-        .terminal {
-            display: inline-block;
-            padding: 10px 18px;
-            margin-bottom: 25px;
-            border: 1px solid rgba(129,140,248,0.35);
-            border-radius: 30px;
-            background: rgba(99,102,241,0.08);
-            color: #a5b4fc;
-            font-family: monospace;
-            font-size: 14px;
-            box-shadow: 0 0 25px rgba(99,102,241,0.15);
-        }
-
-        .hero h1 {
-            font-size: clamp(45px, 8vw, 90px);
-            line-height: 1;
-            margin-bottom: 25px;
-            background: linear-gradient(
-                90deg,
-                #ffffff,
-                #a5b4fc,
-                #c084fc,
-                #ffffff
-            );
-            background-size: 300%;
-            -webkit-background-clip: text;
-            color: transparent;
-            animation: gradientMove 6s linear infinite;
-        }
-
-        @keyframes gradientMove {
-            0% {
-                background-position: 0%;
-            }
-
-            100% {
-                background-position: 300%;
-            }
-        }
-
-        .hero p {
-            color: #9ca3af;
-            font-size: 18px;
-            line-height: 1.7;
-        }
-
-        .highlight {
-            color: #a78bfa;
-            font-weight: 600;
-        }
-
-        .buttons {
-            margin-top: 35px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 13px 25px;
-            margin: 8px;
-            border-radius: 10px;
-            text-decoration: none;
-            color: white;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            box-shadow: 0 10px 30px rgba(99,102,241,0.25);
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(139,92,246,0.4);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 1px solid #6366f1;
-        }
-
-        /* Sections */
-        section {
-            padding: 90px 8%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            color: #9ca3af;
-        }
-
-        /* Cards */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            position: relative;
-            padding: 30px;
-            border-radius: 18px;
-            background: rgba(255,255,255,0.045);
-            border: 1px solid rgba(255,255,255,0.08);
-            backdrop-filter: blur(12px);
-            transition: 0.4s;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: "";
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background: #6366f1;
-            filter: blur(70px);
-            opacity: 0;
-            transition: 0.4s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(129,140,248,0.5);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.35);
-        }
-
-        .card:hover::before {
-            opacity: 0.25;
-        }
-
-        .icon {
-            font-size: 35px;
-            margin-bottom: 18px;
-        }
-
-        .card h3 {
-            margin-bottom: 12px;
-            font-size: 22px;
-        }
-
-        .card p {
-            color: #9ca3af;
-            line-height: 1.6;
-        }
-
-        .card a {
-            display: inline-block;
-            margin-top: 18px;
-            color: #a5b4fc;
-            text-decoration: none;
-        }
-
-        .card a:hover {
-            color: #c4b5fd;
-        }
-
-        /* Technologies */
-        .tech-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 14px;
-        }
-
-        .tech {
-            padding: 12px 20px;
-            border-radius: 30px;
-            background: rgba(99,102,241,0.08);
-            border: 1px solid rgba(129,140,248,0.25);
-            color: #c4b5fd;
-            transition: 0.3s;
-        }
-
-        .tech:hover {
-            transform: scale(1.08);
-            background: rgba(99,102,241,0.18);
-            box-shadow: 0 0 20px rgba(99,102,241,0.2);
-        }
-
-        /* Student Card */
-        .student {
-            max-width: 650px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .student-name {
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
-
-        .roll {
-            color: #a5b4fc;
-            font-family: monospace;
-        }
-
-        /* Footer */
-        footer {
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.08);
-            color: #6b7280;
-        }
-
-        footer span {
-            color: #a78bfa;
-        }
-
-        /* Animation */
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .reveal {
-            animation: fadeUp 1s ease both;
-        }
-
-        /* Mobile */
-        @media (max-width: 700px) {
-
-            nav {
-                padding: 15px 5%;
-            }
-
-            nav div:last-child {
-                display: none;
-            }
-
-            section {
-                padding: 65px 5%;
-            }
-
-            .hero {
-                min-height: 80vh;
-            }
-
-            .hero h1 {
-                font-size: 50px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">&lt;/&gt; Backend Development</div>
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
-        <div>
-            <a href="#home">Home</a>
-            <a href="#theory">Theory</a>
-            <a href="#labs">Labs</a>
-            <a href="#technologies">Technologies</a>
-        </div>
+    <header>
+        <h1>Backend Development</h1>
+        <p>
+            Node.js • Express.js • MongoDB • PostgreSQL • Python • Flask • FastAPI
+        </p>
+    </header>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#theory">Theory</a>
+        <a href="#lab">Lab</a>
+        <a href="#assignments">Assignments</a>
+        <a href="#technologies">Technologies</a>
+        <a href="#repository">Repository</a>
     </nav>
 
-    <!-- Hero -->
-    <section class="hero" id="home">
 
-        <div class="hero-content">
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
 
-            <div class="terminal">
-                &gt; initializing backend_development...
-            </div>
+    <main>
 
-            <h1>Backend<br>Development</h1>
+        <!-- ABOUT -->
 
-            <p>
-                A collection of my
-                <span class="highlight">backend development</span>
-                theory tasks and laboratory experiments.
-            </p>
+        <section id="about">
+
+            <h2>👩‍💻 About</h2>
 
             <p>
-                Exploring servers, REST APIs, authentication, sessions,
-                cookies, databases and modern backend technologies.
+                <strong>Student:</strong> Lavanya Agrawal
             </p>
-
-            <div class="buttons">
-
-                <a
-                    class="btn"
-                    href="https://github.com/lavanyaag23/Backend-Development"
-                    target="_blank">
-                    ⭐ View Repository
-                </a>
-
-                <a
-                    class="btn btn-outline"
-                    href="#labs">
-                    🧪 View Labs
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Student -->
-    <section>
-
-        <div class="student card reveal">
-
-            <div class="icon">👩‍💻</div>
-
-            <div class="student-name">
-                Lavanya Agrawal
-            </div>
-
-            <div class="roll">
-                Roll No. 590014327
-            </div>
-
-            <p style="margin-top:20px;">
-                Computer Science Engineering Student
-            </p>
-
-        </div>
-
-    </section>
-
-    <!-- Theory -->
-    <section id="theory">
-
-        <div class="section-title">
-            <h2>📚 Theory Tasks</h2>
-            <p>Backend concepts and server-side development</p>
-        </div>
-
-        <div class="grid">
-
-            <div class="card reveal">
-                <div class="icon">🟢</div>
-                <h3>Task 1</h3>
-                <p>
-                    Node.js, Express.js and EJS with
-                    server-side development and templating.
-                </p>
-                <a href="./Theory/Task%201/Node.js">
-                    Explore Task →
-                </a>
-            </div>
-
-            <div class="card reveal">
-                <div class="icon">🐍</div>
-                <h3>Task 2</h3>
-                <p>
-                    Building a backend server using
-                    Python and Flask.
-                </p>
-                <a href="./Theory/Task%202">
-                    Explore Task →
-                </a>
-            </div>
-
-            <div class="card reveal">
-                <div class="icon">⚙️</div>
-                <h3>Task 3</h3>
-                <p>
-                    Backend development concepts and
-                    practical implementation.
-                </p>
-                <a href="./Theory/Task3">
-                    Explore Task →
-                </a>
-            </div>
-
-            <div class="card reveal">
-                <div class="icon">🚀</div>
-                <h3>Task 4</h3>
-                <p>
-                    Building REST APIs using FastAPI
-                    and running them with Uvicorn.
-                </p>
-                <a href="./Theory/Task4">
-                    Explore Task →
-                </a>
-            </div>
-
-            <div class="card reveal">
-                <div class="icon">🗄️</div>
-                <h3>Task 10</h3>
-                <p>
-                    Exploring PostgreSQL JSONB and how PostgreSQL
-                    can support both SQL and NoSQL-style data.
-                </p>
-                <a href="./Theory/Task10">
-                    Explore Task →
-                </a>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Labs -->
-    <section id="labs">
-
-        <div class="section-title">
-            <h2>🧪 Lab Experiments</h2>
-            <p>Hands-on backend development experiments</p>
-        </div>
-
-        <div class="grid">
-
-            <div class="card reveal">
-
-                <div class="icon">🌐</div>
-
-                <h3>Experiment 1</h3>
-
-                <p>
-                    Creating a web page using HTML5,
-                    CSS and JavaScript.
-                </p>
-
-                <a href="./LAB/Experiment-1/Report.md">
-                    View Experiment →
-                </a>
-
-            </div>
-
-            <div class="card reveal">
-
-                <div class="icon">🍪</div>
-
-                <h3>Experiment 12A</h3>
-
-                <p>
-                    Working with cookies and sessions
-                    using Node.js and Express.js.
-                </p>
-
-                <a href="./LAB/Experiment-12A">
-                    View Experiment →
-                </a>
-
-            </div>
-
-            <div class="card reveal">
-
-                <div class="icon">📝</div>
-
-                <h3>Experiment 12B</h3>
-
-                <p>
-                    Session-based To-Do List Manager
-                    with theme preference cookies.
-                </p>
-
-                <a href="./LAB/Experiment-12B">
-                    View Experiment →
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Technologies -->
-    <section id="technologies">
-
-        <div class="section-title">
-
-            <h2>🛠️ Technologies</h2>
 
             <p>
-                Tools and technologies used throughout
-                the coursework
+                <strong>Roll No.:</strong> 590014327
             </p>
 
-        </div>
+            <p>
+                This repository contains my Backend Development coursework,
+                including theory tasks, laboratory experiments, assignments,
+                database exercises, and server-side applications.
+            </p>
 
-        <div class="tech-container">
+        </section>
 
-            <div class="tech">HTML5</div>
-            <div class="tech">CSS3</div>
-            <div class="tech">JavaScript</div>
-            <div class="tech">Node.js</div>
-            <div class="tech">Express.js</div>
-            <div class="tech">EJS</div>
-            <div class="tech">Cookie Parser</div>
-            <div class="tech">Express Session</div>
-            <div class="tech">Python</div>
-            <div class="tech">Flask</div>
-            <div class="tech">FastAPI</div>
-            <div class="tech">Uvicorn</div>
-            <div class="tech">MongoDB</div>
-            <div class="tech">MongoDB Atlas</div>
-            <div class="tech">Mongoose</div>
-            <div class="tech">PostgreSQL</div>
-            <div class="tech">JSONB</div>
-            <div class="tech">JWT</div>
-            <div class="tech">bcryptjs</div>
 
-        </div>
+        <!-- THEORY -->
 
-    </section>
+        <section id="theory">
 
-    <!-- Footer -->
+            <h2>📚 Theory</h2>
+
+            <div class="card-container">
+
+                <div class="card">
+
+                    <h3>Task 1 — Node.js & EJS</h3>
+
+                    <p>
+                        Introduction to Node.js, server-side programming
+                        and EJS templating.
+                    </p>
+
+                    <a
+                        class="btn"
+                        href="./Theory/Task%201/Node.js"
+                    >
+                        View Task
+                    </a>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Task 2 — Flask</h3>
+
+                    <p>
+                        Building and working with a Flask-based server.
+                    </p>
+
+                    <a
+                        class="btn"
+                        href="./Theory/Task%202"
+                    >
+                        View Task
+                    </a>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Task 3</h3>
+
+                    <p>
+                        Backend Development theory and implementation
+                        covered in Task 3.
+                    </p>
+
+                    <a
+                        class="btn"
+                        href="./Theory/Task3"
+                    >
+                        View Task
+                    </a>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Task 4 — FastAPI</h3>
+
+                    <p>
+                        Building a FastAPI server using Python and Uvicorn.
+                    </p>
+
+                    <a
+                        class="btn"
+                        href="./Theory/Task4"
+                    >
+                        View Task
+                    </a>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Task 10 — PostgreSQL & JSONB</h3>
+
+                    <p>
+                        PostgreSQL database operations and flexible JSONB
+                        data handling.
+                    </p>
+
+                    <a
+                        class="btn"
+                        href="./Theory/Task10"
+                    >
+                        View Task
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LAB -->
+
+        <section id="lab">
+
+            <h2>🧪 Laboratory Experiments</h2>
+
+            <div class="card-container">
+
+                <!-- Experiment 1 -->
+
+                <div class="card">
+
+                    <h3>Experiment 1 — HTML5</h3>
+
+                    <p>
+                        Creation of a web page using HTML5 elements,
+                        CSS and JavaScript.
+                    </p>
+
+                    <a
+                        class="btn"
+                        href="./LAB/Experiment-1/Report.md"
+                    >
+                        View Experiment
+                    </a>
+
+                </div>
+
+
+                <!-- Experiment 12A -->
+
+                <div class="card">
+
+                    <h3>Experiment 12A — Cookies & Sessions</h3>
+
+                    <p>
+                        Implementation of cookies and server-side sessions
+                        using Node.js and Express.
+                    </p>
+
+                    <a
+                        class="btn"
+                        href="./LAB/Experiment-12A"
+                    >
+                        View Experiment
+                    </a>
+
+                </div>
+
+
+                <!-- Experiment 12B -->
+
+                <div class="card">
+
+                    <h3>Experiment 12B — Session To-Do List</h3>
+
+                    <p>
+                        Session-based To-Do List with theme preferences
+                        stored using cookies.
+                    </p>
+
+                    <a
+                        class="btn"
+                        href="./LAB/Experiment-12B"
+                    >
+                        View Experiment
+                    </a>
+
+                </div>
+
+
+                <!-- Experiment 13A -->
+
+                <div class="card">
+
+                    <h3>Experiment 13A — Mongoose & MongoDB</h3>
+
+                    <p>
+                        MongoDB Atlas integration using Mongoose,
+                        schemas, models and CRUD operations.
+                    </p>
+
+                    <a
+                        class="btn"
+                        href="./LAB/Experiment-13A/mongoose-demo"
+                    >
+                        View Experiment
+                    </a>
+
+                </div>
+
+
+                <!-- Exam 01 A -->
+
+                <div class="card">
+
+                    <h3>Exam 01-A — Notes App</h3>
+
+                    <p>
+                        A Notes application built using Node.js,
+                        Express.js, EJS and MongoDB.
+                    </p>
+
+                    <a
+                        class="btn"
+                        href="./LAB/Exam-01-A/NotesApp"
+                    >
+                        View Project
+                    </a>
+
+                </div>
+
+
+                <!-- Exam 01 C -->
+
+                <div class="card">
+
+                    <h3>Exam 01-C — Simple CMS</h3>
+
+                    <p>
+                        A simple Content Management System using
+                        Express.js, EJS and MongoDB.
+                    </p>
+
+                    <a
+                        class="btn"
+                        href="./LAB/Exam-01-C/SimpleCMS"
+                    >
+                        View Project
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ASSIGNMENTS -->
+
+        <section id="assignments">
+
+            <h2>🛠️ Assignments</h2>
+
+            <div class="card-container">
+
+                <!-- Assignment 1 -->
+
+                <div class="card">
+
+                    <h3>Assignment 1 — To-Do Application</h3>
+
+                    <p>
+                        Backend REST API for a To-Do application with
+                        authentication and CRUD functionality.
+                    </p>
+
+                    <ul>
+                        <li>User Registration</li>
+                        <li>User Login</li>
+                        <li>JWT Authentication</li>
+                        <li>Create Todo</li>
+                        <li>Read Todos</li>
+                        <li>Update Todo</li>
+                        <li>Delete Todo</li>
+                    </ul>
+
+                    <br>
+
+                    <a
+                        class="btn"
+                        href="./Assignment1/todo-app"
+                    >
+                        View Assignment
+                    </a>
+
+                </div>
+
+
+                <!-- Assignment 2 -->
+
+                <div class="card">
+
+                    <h3>Assignment 2 — Database Comparison</h3>
+
+                    <p>
+                        Comparison and implementation of MongoDB and
+                        PostgreSQL JSONB data handling.
+                    </p>
+
+                    <ul>
+                        <li>MongoDB</li>
+                        <li>Mongoose</li>
+                        <li>PostgreSQL</li>
+                        <li>JSONB</li>
+                        <li>Database Queries</li>
+                    </ul>
+
+                    <br>
+
+                    <a
+                        class="btn"
+                        href="./Theory/Assignment2"
+                    >
+                        View Assignment
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TECHNOLOGIES -->
+
+        <section id="technologies">
+
+            <h2>🛠️ Technologies Used</h2>
+
+            <h3>Frontend</h3>
+
+            <ul class="tech-list">
+
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>EJS</li>
+
+            </ul>
+
+
+            <h3>Backend</h3>
+
+            <ul class="tech-list">
+
+                <li>Node.js</li>
+                <li>Express.js</li>
+                <li>Python</li>
+                <li>Flask</li>
+                <li>FastAPI</li>
+                <li>Uvicorn</li>
+
+            </ul>
+
+
+            <h3>Databases</h3>
+
+            <ul class="tech-list">
+
+                <li>MongoDB</li>
+                <li>MongoDB Atlas</li>
+                <li>Mongoose</li>
+                <li>PostgreSQL</li>
+                <li>JSONB</li>
+
+            </ul>
+
+
+            <h3>Authentication & Sessions</h3>
+
+            <ul class="tech-list">
+
+                <li>JWT</li>
+                <li>bcryptjs</li>
+                <li>Cookie Parser</li>
+                <li>Express Session</li>
+
+            </ul>
+
+
+            <h3>Tools</h3>
+
+            <ul class="tech-list">
+
+                <li>Visual Studio Code</li>
+                <li>Git</li>
+                <li>GitHub</li>
+                <li>npm</li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- REPOSITORY -->
+
+        <section id="repository">
+
+            <h2>📁 Repository</h2>
+
+            <p>
+                The repository is organized into separate sections for
+                theory, laboratory experiments and assignments.
+            </p>
+
+            <pre><code>Backend-Development/
+│
+├── LAB/
+│   ├── Experiment-1/
+│   ├── Experiment-12A/
+│   ├── Experiment-12B/
+│   ├── Experiment-13A/
+│   │   └── mongoose-demo/
+│   ├── Exam-01-A/
+│   │   └── NotesApp/
+│   └── Exam-01-C/
+│       └── SimpleCMS/
+│
+├── Assignment1/
+│   └── todo-app/
+│
+├── Theory/
+│   ├── Task 1/
+│   ├── Task 2/
+│   ├── Task3/
+│   ├── Task4/
+│   ├── Task10/
+│   └── Assignment2/
+│
+├── .gitignore
+├── index.html
+└── README.md</code></pre>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
     <footer>
 
         <p>
-            Built with ❤️ by
-            <span>Lavanya Agrawal</span>
+            Backend Development | Lavanya Agrawal
         </p>
 
-        <p style="margin-top:10px;">
-            Backend Development • 2026
+        <p>
+            B.Tech Computer Science Engineering
+        </p>
+
+        <p>
+            <a
+                href="https://github.com/lavanyaag23/Backend-Development"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                View Repository on GitHub
+            </a>
         </p>
 
     </footer>
+
 
 </body>
 </html>

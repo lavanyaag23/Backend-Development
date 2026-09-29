@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>My Notes</h1>
+            <a href="/notes/new" class="add-btn">+ Add Note</a>
+        </header>
+
+        <% if (notes.length === 0) { %>
+
+            <div class="empty">
+                <h2>No notes available</h2>
+                <p>Create your first note to get started.</p>
+            </div>
+
+        <% } else { %>
+
+            <div class="notes-grid">
+
+                <% notes.forEach(note => { %>
+
+                    <div class="note-card">
+
+                        <h2><%= note.title %></h2>
+
+                        <p class="content">
+                            <%= note.content %>
+                        </p>
+
+                        <p class="category">
+                            Category: <strong><%= note.category %></strong>
+                        </p>
+
+                        <p class="date">
+                            Created:
+                            <%= new Date(note.createdAt).toLocaleString() %>
+                        </p>
+
+                        <form
+                            action="/notes/<%= note._id %>/delete"
+                            method="POST"
+                            onsubmit="return confirm('Are you sure you want to delete this note?');"
+                        >
+                            <button type="submit" class="delete-btn">
+                                Delete
+                            </button>
+                        </form>
+
+                    </div>
+
+                <% }) %>
+
+            </div>
+
+        <% } %>
+
+    </div>
+
+</body>
+</html>

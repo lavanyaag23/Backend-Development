@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.button,
+button {
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.button:hover,
+button:hover {
+    background: #1f2d3a;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post-card {
+    background: white;
+    padding: 22px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.post-card h3 {
+    margin-top: 0;
+}
+
+.post-card h3 a {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.post-card h3 a:hover {
+    text-decoration: underline;
+}
+
+.author {
+    font-weight: bold;
+}
+
+.date {
+    color: #777;
+    font-size: 14px;
+}
+
+.empty {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+form button {
+    margin-top: 20px;
+}
+
+.error {
+    background: #ffe0e0;
+    color: #b00020;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.single-post {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.post-info {
+    display: flex;
+    gap: 20px;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.content {
+    line-height: 1.7;
+    font-size: 17px;
+}
